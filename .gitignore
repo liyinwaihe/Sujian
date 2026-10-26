@@ -10,3 +10,6 @@ data/secret.key
 .DS_Store
 Thumbs.db
 config.json
+
+.vercel
+.env*
