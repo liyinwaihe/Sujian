@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "content/**;lib/**;public/**;config.example.json"
+    }
+  },
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/api/index" }
+  ],
+  "headers": [
+    {
+      "source": "/style.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300" }
+      ]
+    }
+  ]
+}

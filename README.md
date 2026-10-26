@@ -124,6 +124,41 @@ systemctl enable --now dear-blog
 
 外网访问建议加 Nginx 反代（80/443 -> 127.0.0.1:3000）并配 HTTPS。别忘了服务器防火墙放行对应端口。
 
+## 部署到 Vercel（可选）
+
+仓库已含 Vercel 适配层（`api/index.js` + `vercel.json`），两种方式任选：
+
+**方式 A：GitHub 一键部署（推荐）**
+
+1. 登录 [vercel.com](https://vercel.com)，Add New → Project → Import `liyinwaihe/dear-blog`
+2. Framework Preset 选 **Other**，直接 Deploy
+3. 部署后在 Settings → Environment Variables 添加：
+
+| 变量 | 值 | 说明 |
+|------|-----|------|
+| `ADMIN_PASSWORD` | 你的后台密码 | 必设，否则无法登录后台 |
+| `SESSION_SECRET` | 任意长随机串 | 必设，否则实例更替后登录态失效 |
+
+**方式 B：Vercel CLI**
+
+```bash
+npm i -g vercel
+cd dear-blog
+vercel --prod
+# 首次部署后同样到控制台补上面两个环境变量并 Redeploy
+```
+
+### Vercel 环境与自建服务器的差异（读一遍再决定）
+
+| 能力 | Vercel 上 | 自建服务器上 |
+|------|-----------|--------------|
+| 前台阅读/搜索/RSS | 完全可用 | 完全可用 |
+| 写文章到本地文件 | **不可用**（文件系统只读） | 可用 |
+| 后台登录 | 可用（会话需 `SESSION_SECRET`） | 可用 |
+| 后台发文/删文/设置 | **不可用**（写操作会被文件系统拒绝） | 可用 |
+
+结论：**Vercel 适合「本地写 Markdown → git push → 自动发布」的纯静态用法**；需要在线后台写作就留在你的宝塔服务器上，两边可以同时跑（同一个 GitHub 仓库，Vercel 自动跟随 push 更新前台内容）。
+
 ## 致谢
 
 - [Dear 主题](https://github.com/imjeff/typecho-dear)（CC BY-NC-SA 4.0）— 排版结构复刻来源
