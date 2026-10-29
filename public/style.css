@@ -158,6 +158,21 @@ img {
   border: 1px solid var(--border);
 }
 
+/* 正文内嵌媒体不超出容器宽度（手机端最容易撑破的地方） */
+iframe,
+video,
+embed,
+object {
+  max-width: 100%;
+}
+
+figure { margin: 0.85rem 0; }
+figcaption {
+  color: var(--faint);
+  font-size: 0.76rem;
+  margin-top: 0.35rem;
+}
+
 /* ---- 页头：左标题 + 导航 ---- */
 header {
   padding: 0 0 1.25rem;
@@ -341,18 +356,49 @@ input:focus-visible {
 
 /* ---- 响应式 ---- */
 @media (max-width: 640px) {
-  body { padding: 1.2rem 1rem; }
-  h1 { font-size: 1.4rem; }
-  .title h1 { font-size: 1.4rem; }
-  ul.posts li { flex-direction: row; }
-  ul.posts li span { flex: 0 0 92px; }
-  table { font-size: 0.76rem; }
+  /* 手机上加一档：0.85rem≈13.6px 在手机上偏小 */
+  body { font-size: 0.95rem; padding: 1.1rem 0.95rem; }
+  h1 { font-size: 1.45rem; }
+  .title h1 { font-size: 1.45rem; }
+  h2 { font-size: 1.05rem; }
+  time, .intro, .empty-note { font-size: 0.82rem; }
+  nav p { font-size: 0.86rem; }
+  nav a { margin-right: 0.55rem; }
+
+  /* 输入框字号不小于 16px，否则 iOS 聚焦时整页被放大 */
+  .search-form input, .search-form button { font-size: 1rem; }
+  .search-form input { padding: 0.45rem 0.6rem; }
+  .search-form button { padding: 0.45rem 0.8rem; }
+  .admin-form input[type="text"],
+  .admin-form input[type="password"],
+  .admin-form input[type="date"],
+  .admin-form input[type="number"],
+  .admin-form input[type="search"],
+  .admin-form textarea { font-size: 1rem; }
+
+  /* 表格改为可横向滚动，不再把页面撑宽 */
+  .post-body table,
+  .admin-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .post-body pre { -webkit-overflow-scrolling: touch; }
+
+  .tags a { margin-right: 0.55rem; line-height: 1.9; }
+}
+
+@media (max-width: 480px) {
+  /* 文章列表：日期移到标题上方，把整行宽度让给标题 */
+  ul.posts li { flex-direction: column; gap: 0.1rem; margin: 0.7rem 0; }
+  ul.posts li span { flex: none; padding-top: 0; }
 }
 
 @media (max-width: 400px) {
-  .theme-toggle { width: 28px; height: 28px; }
-  nav a { margin-right: 0.5rem; font-size: 0.72rem; }
-  ul.posts li { font-size: 0.78rem; }
+  /* 触摸目标不小于 32px */
+  .theme-toggle { width: 32px; height: 32px; }
+  nav a { margin-right: 0.45rem; font-size: 0.8rem; }
 }
 
 /* ============================================================
