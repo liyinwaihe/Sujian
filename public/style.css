@@ -376,13 +376,23 @@ input:focus-visible {
   .admin-form input[type="search"],
   .admin-form textarea { font-size: 1rem; }
 
-  /* 表格改为可横向滚动，不再把页面撑宽 */
+  /* 表格：按内容固有宽度排布 + 超出容器横向滚动
+     不能用 width:100%，那会让浏览器把列压扁（长列被挤成一行一个字符） */
   .post-body table,
   .admin-table {
     display: block;
-    width: 100%;
+    width: max-content;
+    max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  /* 兜底：即使极端情况也不让单元格窄到竖排 */
+  .post-body th,
+  .post-body td,
+  .admin-table th,
+  .admin-table td {
+    min-width: 5em;
+    overflow-wrap: break-word;
   }
   .post-body pre { -webkit-overflow-scrolling: touch; }
 
