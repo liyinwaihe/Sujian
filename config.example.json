@@ -1,5 +1,5 @@
 {
-  "title": "亲爱的博客",
+  "title": "素笺",
   "subtitle": "一个纯文本的极简角落",
   "author": "Dear",
   "postsPerPage": 8,
@@ -26,5 +26,5 @@
       "href": "/admin"
     }
   ],
-  "footer": "由 Dear Blog 驱动 · 复刻 Bear Blog 与 Dear 主题的极简精神"
+  "footer": "由素笺驱动 · 复刻 Bear Blog 与 Dear 主题的极简精神"
 }

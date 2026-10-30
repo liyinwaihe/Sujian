@@ -1,4 +1,4 @@
-# Spec — Dear 独立博客程序（Dear Blog）
+# Spec — 素笺 Sujian（独立极简博客程序）
 
 > 生成日期：2026-10-26
 > 基于：用户需求「做一个脱离 WordPress & Typecho 的独立程序」+ Dear 主题（imjeff/typecho-dear v1.1.0）设计复刻 + 用户极简单色纸感设计规范（minimalist-paper-ui）

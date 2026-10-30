@@ -1,23 +1,23 @@
-# Dear Blog
+# 素笺 Sujian
 
 **一个不依赖任何框架和 npm 包的极简博客程序 —— 下载、`node server.js`、开始写。**
 
 视觉复刻 [Bear Blog](https://bearblog.dev) 与 [Dear 主题](https://github.com/imjeff/typecho-dear) 的单栏纯文本排版：黑白灰为底，金色只用来标当前页，霞鹜文楷，亮/暗双主题。
 
 - 示例站点：**<https://blog.liyinwaihe.com>** ← 本站就是用它跑的
-- 代码托管：[GitCode](https://gitcode.com/liyinwaihe/dear) · [GitHub](https://github.com/liyinwaihe/dear-blog)
+- 代码托管：[GitCode](https://gitcode.com/liyinwaihe/sujian) · [GitHub](https://github.com/liyinwaihe/sujian)
 - 许可：[MIT](LICENSE)（视觉设计来源见[致谢](#致谢)）
 
 ![首页](docs/home.png)
 
 ## 为什么是它
 
-| | Dear Blog | WordPress / Typecho |
+| | 素笺 | WordPress / Typecho |
 |---|---|---|
 | 安装 | 解压即用，**没有 `npm install`** | 需要 PHP + 数据库 + 安装向导 |
 | 依赖 | **0 个**（只用 Node.js 内置模块） | 一堆插件与主题 |
 | 数据 | 一个 Markdown 文件就是一篇文章 | 存在数据库里 |
-| 体积 | 28 个文件，约 200 KB | 几十 MB 起 |
+| 体积 | 31 个文件，约 190 KB | 几十 MB 起 |
 | 备份 | `cp -r content/ 你的U盘` | 导出数据库 + 上传目录 |
 | 迁移 | 拷贝目录，改个配置 | 改域名要动数据库 |
 
@@ -93,10 +93,10 @@ tags: [开始]
 程序无状态、零依赖，把目录传上去跑起来即可：
 
 ```bash
-tar --exclude='server.log' --exclude='data/secret.key' -czf dear-blog-deploy.tar.gz .
-scp dear-blog-deploy.tar.gz root@YOUR_SERVER:/opt/
-ssh root@YOUR_SERVER "mkdir -p /opt/dear-blog && tar -xzf /opt/dear-blog-deploy.tar.gz -C /opt/dear-blog"
-ssh root@YOUR_SERVER "cd /opt/dear-blog && chmod +x deploy.sh && ADMIN_PASSWORD=你的密码 ./deploy.sh 3000"
+tar --exclude='server.log' --exclude='data/secret.key' -czf sujian-deploy.tar.gz .
+scp sujian-deploy.tar.gz root@YOUR_SERVER:/opt/
+ssh root@YOUR_SERVER "mkdir -p /opt/sujian && tar -xzf /opt/sujian-deploy.tar.gz -C /opt/sujian"
+ssh root@YOUR_SERVER "cd /opt/sujian && chmod +x deploy.sh && ADMIN_PASSWORD=你的密码 ./deploy.sh 3000"
 ```
 
 `deploy.sh` 会做 Node 版本检查、语法自检、启动和健康检查。
@@ -105,12 +105,12 @@ ssh root@YOUR_SERVER "cd /opt/dear-blog && chmod +x deploy.sh && ADMIN_PASSWORD=
 
 ```ini
 [Unit]
-Description=Dear Blog
+Description=sujian
 After=network.target
 
 [Service]
-WorkingDirectory=/opt/dear-blog
-ExecStart=/usr/bin/node /opt/dear-blog/server.js
+WorkingDirectory=/opt/sujian
+ExecStart=/usr/bin/node /opt/sujian/server.js
 Environment=PORT=3000
 Environment=ADMIN_PASSWORD=改成强密码
 Restart=always
@@ -121,7 +121,7 @@ WantedBy=multi-user.target
 ```
 
 ```bash
-systemctl enable --now dear-blog
+systemctl enable --now sujian
 ```
 
 外网访问加一层 Nginx 反代（80/443 → 127.0.0.1:3000）并配 HTTPS，别忘了防火墙放行端口。反代记得传这两个头，否则后台 CSRF 校验和 RSS 链接会出错：
@@ -147,7 +147,7 @@ proxy_set_header X-Forwarded-Proto $scheme;
 ## 目录结构
 
 ```
-dear-blog/
+sujian/
 ├── server.js              入口（只装配）
 ├── config.json            站点配置（不入库，从 config.example.json 复制）
 ├── data/secret.key        首次启动自动生成的会话密钥（不入库）

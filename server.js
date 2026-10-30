@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   try {
     router.handle(req, res);
   } catch (err) {
-    console.error('[dear-blog] unhandled error:', err && err.message);
+    console.error('[sujian] unhandled error:', err && err.message);
     if (!res.headersSent) {
       res.writeHead(500, { 'Content-Type': 'text/html; charset=utf-8' });
     }
@@ -18,5 +18,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log('[dear-blog] running at http://localhost:' + PORT);
+  console.log('[sujian] running at http://localhost:' + PORT);
 });

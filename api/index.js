@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   try {
     handle(req, res);
   } catch (err) {
-    console.error('[dear-blog] unhandled error:', err && err.message);
+    console.error('[sujian] unhandled error:', err && err.message);
     if (!res.headersSent) {
       res.writeHead(500, { 'Content-Type': 'text/html; charset=utf-8' });
     }
@@ -20,6 +20,6 @@ module.exports = async (req, res) => {
 if (require.main === module) {
   const PORT = Number(process.env.PORT) || 3000;
   require('node:http').createServer((rq, rs) => module.exports(rq, rs)).listen(PORT, () => {
-    console.log('[dear-blog] running at http://localhost:' + PORT);
+    console.log('[sujian] running at http://localhost:' + PORT);
   });
 }

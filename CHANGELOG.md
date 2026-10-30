@@ -2,6 +2,20 @@
 
 本项目的所有重要变更都记录在这里。版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## v1.1.0 — 2026-10-30
+
+项目更名：**Dear Blog → 素笺（Sujian）**。仅改名，无功能变更，升级可直接替换目录。
+
+### 变更
+
+- 项目名、站点默认标题、页脚、示例文章文案统一为「素笺」
+- GitHub 仓库 `dear-blog` → `sujian`，GitCode 仓库 `dear` → `sujian`（旧地址自动跳转）
+- 服务器目录 `/www/wwwroot/dear-blog` → `/www/wwwroot/sujian`，systemd 服务 `dear-blog` → `sujian`
+
+### 为什么改名
+
+原名与致敬对象 Typecho「Dear」主题撞名，搜索辨识度为零。新名字取自「素笺」——素是无装饰，笺是小幅的纸，正好对应这个程序的两件事：极简的样式，和一个文件写一件事。
+
 ## v1.0.0 — 2026-10-30
 
 首个公开版本。线上实例：<https://blog.liyinwaihe.com>

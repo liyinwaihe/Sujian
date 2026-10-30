@@ -5,7 +5,7 @@ category: 随笔
 tags: [开始, 极简]
 ---
 
-这是一篇示例文章，用来展示 Dear Blog 的正文排版。它不依赖 WordPress，也不依赖 Typecho——把 Markdown 文件放进 `content/posts/`，刷新页面，它就发布了。
+这是一篇示例文章，用来展示 素笺 的正文排版。它不依赖 WordPress，也不依赖 Typecho——把 Markdown 文件放进 `content/posts/`，刷新页面，它就发布了。
 
 ## 为什么要做独立程序
 
