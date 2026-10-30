@@ -315,8 +315,17 @@ footer {
 }
 footer p {
   font-size: 0.75rem;
+  line-height: 1.7;
   color: var(--faint);
   margin: 0 0 0.6rem;
+}
+footer p a {
+  color: var(--text-light);
+  border-bottom: 1px solid var(--box-border);
+}
+footer p a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
 }
 
 .theme-toggle {
