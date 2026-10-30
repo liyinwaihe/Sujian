@@ -5,7 +5,7 @@
 视觉复刻 [Bear Blog](https://bearblog.dev) 与 [Dear 主题](https://github.com/imjeff/typecho-dear) 的单栏纯文本排版：黑白灰为底，金色只用来标当前页，霞鹜文楷，亮/暗双主题。
 
 - 示例站点：**<https://blog.liyinwaihe.com>** ← 本站就是用它跑的
-- 代码托管：[GitCode](https://gitcode.com/liyinwaihe/sujian) · [GitHub](https://github.com/liyinwaihe/sujian)
+- 代码托管：[GitCode](https://gitcode.com/liyinwaihe/sujian) · [GitHub](https://github.com/liyinwaihe/Sujian)
 - 许可：[MIT](LICENSE)（视觉设计来源见[致谢](#致谢)）
 
 ![首页](docs/home.png)
