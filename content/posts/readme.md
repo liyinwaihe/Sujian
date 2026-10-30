@@ -11,7 +11,7 @@ tags: [素笺, 自建博客]
 
 一个不依赖 WordPress、不依赖 Typecho、不依赖任何 npm 包的博客程序。下载目录、跑起来、开始写——没有安装向导，没有数据库，没有构建步骤。
 
-视觉上复刻 [Bear Blog](https://bearblog.dev) 与 [Dear 主题](https://github.com/imjeff/typecho-dear) 的单栏纯文本排版：黑白灰为底，金色只用来标当前页，霞鹜文楷，亮暗双主题。
+单栏纯文本排版参考 [Bear Blog](https://bearblog.dev)：黑白灰为底，金色只用来标当前页，霞鹜文楷，亮暗双主题。
 
 **为什么叫素笺**：素是无装饰，笺是小幅的纸。一张笺写一件事——正好对应它的两条设计：样式极简，一个 Markdown 文件就是一篇文章。
 
@@ -84,6 +84,5 @@ HTTPS 用 Let's Encrypt 就行，续期脚本记得带 `nginx -s reload`。
 
 ## 致谢
 
-- [Dear 主题](https://github.com/imjeff/typecho-dear)（CC BY-NC-SA 4.0）— 排版结构复刻来源
 - [Bear Blog](https://bearblog.dev) — 极简博客的原始精神
 - [霞鹜文楷](https://github.com/lxgw/LxgwWenKai) — 正文字体

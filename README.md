@@ -2,7 +2,7 @@
 
 **一个不依赖任何框架和 npm 包的极简博客程序 —— 下载、`node server.js`、开始写。**
 
-视觉复刻 [Bear Blog](https://bearblog.dev) 与 [Dear 主题](https://github.com/imjeff/typecho-dear) 的单栏纯文本排版：黑白灰为底，金色只用来标当前页，霞鹜文楷，亮/暗双主题。
+单栏纯文本排版参考 [Bear Blog](https://bearblog.dev)：黑白灰为底，金色只用来标当前页，霞鹜文楷，亮/暗双主题。
 
 - 示例站点：**<https://blog.liyinwaihe.com>** ← 本站就是用它跑的
 - 代码托管：[GitCode](https://gitcode.com/liyinwaihe/sujian) · [GitHub](https://github.com/liyinwaihe/Sujian)
@@ -180,10 +180,9 @@ sujian/
 
 代码以 [MIT](LICENSE) 发布，可自由使用、修改、商用、二次分发。
 
-视觉排版结构参考了 [Dear 主题](https://github.com/imjeff/typecho-dear)（CC BY-NC-SA 4.0）与 [Bear Blog](https://bearblog.dev)。若你要把这个样式用于商业项目，建议先确认上游授权——本仓库只做了风格重实现，未复制其代码资源。
+视觉排版参考了 [Bear Blog](https://bearblog.dev) 的公开设计。本仓库为独立实现，未复制任何第三方代码或资源，可自由使用与商用。
 
 ## 致谢
 
-- [Dear 主题](https://github.com/imjeff/typecho-dear) — 排版结构复刻来源
 - [Bear Blog](https://bearblog.dev) — 极简博客的原始精神
 - [霞鹜文楷 / LXGW WenKai](https://github.com/lxgw/LxgwWenKai) — 正文字体

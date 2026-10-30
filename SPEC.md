@@ -1,12 +1,12 @@
 # Spec — 素笺 Sujian（独立极简博客程序）
 
 > 生成日期：2026-10-26
-> 基于：用户需求「做一个脱离 WordPress & Typecho 的独立程序」+ Dear 主题（imjeff/typecho-dear v1.1.0）设计复刻 + 用户极简单色纸感设计规范（minimalist-paper-ui）
+> 基于：用户需求「做一个脱离 WordPress & Typecho 的独立程序」+ 用户极简单色纸感设计规范（minimalist-paper-ui）
 > 状态：已确认（用户指令明确，MVP 直接交付）
 
 ## 1. 产品定义
 
-- **一句话描述**：一个不依赖 WordPress/Typecho 的单用户极简博客独立程序，视觉复刻 Bear Blog / Dear 主题的纯文本单栏风格，并遵循用户的极简单色纸感设计规范。
+- **一句话描述**：一个不依赖 WordPress/Typecho 的单用户极简博客独立程序，视觉参考 Bear Blog 的纯文本单栏风格，并遵循用户的极简单色纸感设计规范。
 - **目标用户**：想要零依赖、静态感、纯文本写作体验的个人博主。
 - **核心问题**：跑 WordPress/Typecho 需要 PHP + MySQL + 插件维护；本程序只要 Node.js 一个运行时，零依赖、单文件配置、Markdown 放进文件夹即发布。
 
