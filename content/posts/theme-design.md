@@ -1,11 +1,13 @@
 ---
-title: 素笺主题的设计方向
+title: 素笺主题发布：设计方向说明
 date: 2026-10-30
-category: 设计
-tags: [设计, 主题, 排版]
+category: 发布
+tags: [设计, 主题, 开源]
 ---
 
-这个主题没有做"风格"，它做的是一组约束：把能去掉的都去掉，剩下的每一样都必须有理由。下面把这组约束拆开讲——定位、理念、视觉、结构、用户，以及每一处取舍换回了什么。
+> 素笺主题已开源：v1.1.0 · MIT 许可 · [GitHub](https://github.com/liyinwaihe/Sujian) · [GitCode](https://gitcode.com/liyinwaihe/sujian)
+
+这个主题没有做"风格"，它做的是一组约束：把能去掉的都去掉，剩下的每一样都必须有理由。下面把这份约束公开——定位、理念、视觉、结构、用户、每一处取舍换回了什么，以及它现在在哪里可以拿到。
 
 ## 一、设计目标与定位
 
@@ -124,6 +126,19 @@ tags: [设计, 主题, 排版]
 4. **手机端能读完一篇。** 375px 宽度下正文 0.95rem、表格可横滑、输入框不触发缩放、触摸目标不小于 32px。
 
 **不追的指标**也说清楚：不做首屏加载速度竞赛（本来就没有可优化的东西）、不做 Lighthouse 满分（它衡量的是工程指标，不是阅读体验）、不做"设计感"评分——这个主题的目标是让人忘记界面的存在，任何被注意到的设计都是失败的。
+
+## 八、获取与版本
+
+代码在 GitHub 与 GitCode，MIT 许可，clone 下来就能跑：
+
+```bash
+git clone https://github.com/liyinwaihe/Sujian.git sujian
+cd sujian
+cp config.example.json config.json   # 改掉里面的 adminPassword
+node server.js
+```
+
+没有 `npm install`，没有构建步骤，Node.js ≥ 16 即可。想先看效果，本站就是它跑出来的：[blog.liyinwaihe.com](https://blog.liyinwaihe.com)。当前版本 **v1.1.0**，更新记录在仓库的 `CHANGELOG.md`，改样式只需动 `public/style.css` 开头的令牌区。有问题或想改点什么，直接去仓库提 issue。
 
 ---
 
