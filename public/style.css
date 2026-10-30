@@ -519,6 +519,12 @@ html.dark .btn-danger { border-color: rgba(231,76,60,.4); }
   color: var(--text-light);
   margin: 0 0 0.3rem;
 }
+.form-hint {
+  margin: 0.28rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--faint);
+}
 .admin-form input[type="text"],
 .admin-form input[type="password"],
 .admin-form input[type="date"],
