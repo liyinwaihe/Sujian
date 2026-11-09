@@ -80,6 +80,7 @@ HTTPS 用 Let's Encrypt 就行，续期脚本记得带 `nginx -s reload`。
 
 - GitHub：[liyinwaihe/Sujian](https://github.com/liyinwaihe/Sujian)
 - GitCode：[liyinwaihe/sujian](https://gitcode.com/liyinwaihe/sujian)
+- Gitee：[liyinwaihe/sujian](https://gitee.com/liyinwaihe/sujian)
 - 许可：MIT（代码部分）
 
 ## 致谢
