@@ -9,6 +9,9 @@ data/secret.key
 # 登录失败记录（含访客 IP，勿提交）
 data/login-attempts.json
 
+# 黑名单（含访客 IP，勿提交）
+data/blacklist.json
+
 # 系统文件
 .DS_Store
 Thumbs.db

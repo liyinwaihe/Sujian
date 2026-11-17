@@ -635,3 +635,63 @@ html.dark .btn-danger { border-color: rgba(231,76,60,.4); }
   .form-grid { grid-template-columns: 1fr; }
   .admin-head { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---- 后台：黑名单 ---- */
+.bl-section {
+  border: 1px solid var(--box-border);
+  border-radius: 8px;
+  background: var(--box-bg);
+  padding: 0.9rem 1rem;
+  margin: 0 0 1rem;
+}
+.bl-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.bl-head h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.3rem;
+}
+.bl-dim {
+  font-size: 0.74rem;
+  color: var(--faint);
+  margin: 0.18rem 0;
+  line-height: 1.65;
+}
+.bl-count {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--faint);
+  margin-left: 0.4rem;
+}
+.bl-add { margin: 0.85rem 0 0.2rem; }
+.bl-add-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.6fr;
+  gap: 0.6rem;
+}
+.bl-ip { font-family: var(--font-mono); color: var(--text); white-space: nowrap; }
+.bl-tag {
+  font-size: 0.66rem;
+  border: 1px solid var(--box-border);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  margin-left: 0.35rem;
+  color: var(--faint);
+}
+.admin-form select {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 0.82rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+}
+@media (max-width: 640px) {
+  .bl-add-grid { grid-template-columns: 1fr; }
+  .bl-head { flex-direction: column; }
+}
