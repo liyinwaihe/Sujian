@@ -5,7 +5,7 @@ category: 部署教程
 tags: [素笺, 自建博客]
 ---
 
-> 当前版本 v1.1.0，最后更新 2026-10-30。你现在看到的这个站，就是它跑出来的。
+> 当前版本 v1.2.0，最后更新 2026-11-25。你现在看到的这个站，就是它跑出来的。
 
 ## 它是什么
 
@@ -76,7 +76,7 @@ HTTPS 用 Let's Encrypt 就行，续期脚本记得带 `nginx -s reload`。
 
 ## 版本与来源
 
-当前版本 **v1.1.0**（2026-10-30），主要变更：更名素笺、新增 `/about` 独立页面、底部栏支持 HTML、移动端表格与字号修复。
+当前版本 **v1.2.0**（2026-11-25），主要变更：登录防爆破按 IP 递增封禁、后台新增黑名单管理（手工封禁 + 外部恶意 IP 情报）、底部栏支持 HTML、新增 `/about` 独立页面。
 
 - GitHub：[liyinwaihe/Sujian](https://github.com/liyinwaihe/Sujian)
 - GitCode：[liyinwaihe/sujian](https://gitcode.com/liyinwaihe/sujian)
