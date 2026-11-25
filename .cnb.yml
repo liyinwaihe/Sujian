@@ -1,0 +1,68 @@
+# 素笺 Sujian —— CNB 云原生构建
+# 本项目零运行时依赖，所以「构建」= 语法自检 + 启动冒烟；打 tag 时额外产出发布包
+# 文档：https://docs.cnb.cool/zh/build/intro.html
+
+main:
+  # 合入 main：全量自检
+  push:
+    - docker:
+        image: node:20
+      stages:
+        - name: 语法检查
+          script: |
+            set -e
+            for f in server.js api/*.js lib/*.js scripts/*.js; do
+              node --check "$f"
+            done
+            echo "语法检查通过：$(ls lib/*.js | wc -l) 个模块"
+        - name: 启动冒烟
+          script: |
+            set -e
+            ADMIN_PASSWORD=ci-only node server.js &
+            node scripts/ci-smoke.js http://127.0.0.1:3000
+
+  # PR：只做静态检查，跑得快
+  pull_request:
+    - docker:
+        image: node:20
+      stages:
+        - name: 语法检查
+          script: |
+            set -e
+            for f in server.js api/*.js lib/*.js scripts/*.js; do
+              node --check "$f"
+            done
+            echo "语法检查通过"
+        - name: 启动冒烟
+          script: |
+            set -e
+            ADMIN_PASSWORD=ci-only node server.js &
+            node scripts/ci-smoke.js http://127.0.0.1:3000
+
+$:
+  # 打标签：自检 + 产出可直接上传服务器的发布包
+  tag_push:
+    - docker:
+        image: node:20
+      stages:
+        - name: 语法检查
+          script: |
+            set -e
+            for f in server.js api/*.js lib/*.js scripts/*.js; do
+              node --check "$f"
+            done
+            echo "语法检查通过"
+        - name: 启动冒烟
+          script: |
+            set -e
+            ADMIN_PASSWORD=ci-only node server.js &
+            node scripts/ci-smoke.js http://127.0.0.1:3000
+        - name: 打发布包
+          script: |
+            set -e
+            TAG=$(git describe --tags --exact-match 2>/dev/null || echo dev)
+            tar --exclude='./.git' --exclude='./server.log' --exclude='*.tar.gz' \
+                -czf "sujian-${TAG}.tar.gz" .
+            ls -lh "sujian-${TAG}.tar.gz"
+            echo "SHA256: $(sha256sum "sujian-${TAG}.tar.gz" | cut -d' ' -f1)"
+            echo "发布包 sujian-${TAG}.tar.gz 已生成（可在构建日志中下载）"
